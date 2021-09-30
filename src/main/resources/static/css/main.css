@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'LotteMartDream';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'LotteMartDream';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'LotteMartDream';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff') format('woff');
+  }
+  .lottemartdream * {
+   font-family: 'LotteMartDream', sans-serif;
+  }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'LotteMartDream', sans-serif;
+    min-width: 790px;
+}
+
+
+/* Util */
+
+.layout {
+    margin : 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+
+/* Main */
+
+header {
+    border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 28px;
+    padding : 10px 0;
+}
+
+.menu-area > ul > li {
+    display: inline;
+}
+
+.menu-area > ul > li > a{
+    padding : 10px 12px;
+    font-size: 18px;
+}
+
+.board {
+    min-height: 600px;
+    text-align: left;
+}
+
+
+.board > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    padding : 18px 0;
+}
+
+.btn-area {
+    padding : 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-area > select {
+    padding : 6px 14px;
+    font-family: inherit;
+    text-align: left;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.btn-area > a {
+    padding : 6px;
+    border-radius: 4px;
+    border: 1px solid rgb(182, 180, 180);
+}
+
+
+.content {
+    display: flex;
+    text-align: center;
+    padding: 8px 0;
+    font-weight: 200;
+}
+
+.top {
+    background-color: rgba(236, 234, 234, 0.719);
+    font-weight: bold;
+}
+
+.no {
+    width: 15%;
+}
+
+.title {
+    width: 40%;
+    
+}
+
+.title-set {
+    text-align: left;
+}
+
+.writer {
+    width: 15%;
+    
+}
+.reg-date {
+    width: 20%;
+    
+}
+.hit {
+    width: 15%;
+
+}
+
+
+
+
+
+.pagination {
+    text-align: center;
+    margin : 14px 0;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+
+
+
+
+
+/* footer */
+
+footer {
+    border-top : 1px solid rgb(199, 199, 199);
+    padding : 12px;
+}

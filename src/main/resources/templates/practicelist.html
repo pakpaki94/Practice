@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Main :: Main</title>
+</head>
+<body>
+<header>
+    <div class="layout head">
+        <div>
+            <span class="logo"><a href="/practice/list"><i class="fas fa-laptop-code"></i> Yong</a></span>
+        </div>
+        <div class="menu-area">
+            <ul>
+                <li><a href="/practice/list">게시판</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main class="layout">
+    <div class="board">
+        <h2>게시판</h2>
+        <div class="btn-area">
+            <label>
+                <select>
+                    <option>자유</option>
+                    <option>개발</option>
+                </select>
+            </label>
+            <a href="/practice/write"><i class="fas fa-user-edit"></i> 글작성</a>
+        </div>
+        <ul>
+            <li class="content top">
+                <div class="no">글번호</div>
+                <div class="title">제목</div>
+                <div class="writer">작성자</div>
+                <div class="reg-date">작성일자</div>
+                <div class="hit">조회수</div>
+            </li>
+                <li class="content" th:each="practice : ${list}">
+                    <div class="no" th:text="${practice.id}"></div>
+                    <div class="title title-set"><a th:href="@{/practice/view(id=${practice.id})}" th:text="${practice.title}"></a></div>
+                    <div class="writer" th:text="${practice.name}"></div>
+                    <div class="reg-date" th:text="${#temporals.format(practice.reg_date, 'yyyy.MM.dd HH:mm')}">-</div>
+                    <div class="hit" th:text="${practice.hit}"></div>
+                </li>
+<!--            <li class="content">-->
+<!--                <div class="no">1</div>-->
+<!--                <div class="title title-set"><a href="">스프링 알려주세요</a></div>-->
+<!--                <div class="writer">용휘</div>-->
+<!--                <div class="reg-date">2021-09-18</div>-->
+<!--                <div class="hit">100</div>-->
+<!--            </li>-->
+        </ul>
+        <div class="pagination">
+            1 2 3 4 5
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="layout">
+        copyright Yong. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

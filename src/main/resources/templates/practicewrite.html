@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/write.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>게시물 작성폼</title>
+</head>
+<body>
+<header>
+    <div class="layout_1 head">
+        <div>
+            <span class="logo"><a href="/practice/list"><i class="fas fa-laptop-code"></i> Yong</a></span>
+        </div>
+        <div class="menu-area">
+            <ul>
+                <li><a href="/practice/list">게시판</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="layout">
+    <h2>게시판 글쓰기</h2>
+    <form action="/practice/writepro" method="post">
+        <div class="boxing">
+            <select class="selectbox" name="">
+                <option value="#">게시판을 선택해주세요.</option>
+                <option value="#">자유(미구현)</option>
+                <option value="#">개발(미구현)</option>
+            </select>
+            <input class="hashbox" type="text" placeholder="#해쉬태그입력(미구현)">
+        </div>
+        <input class="insertbox" name="title" type="text" placeholder="제목을 입력해주세요">
+        <textarea class="insertbox" name="content" placeholder="내용을 입력해주세요"></textarea>
+        <input class="namebox" name="name" type="text" placeholder="작성자명을 입력해주세요">
+        <input name="reg_date" type="hidden">
+        <input name="hit" type="hidden" value="0">
+        <div class="save">
+            <button class="button" type="submit">작성</button>
+            <button class="button"><a href="/practice/list">돌아가기</a></button>
+        </div>
+    </form>
+</div>
+<footer>
+    <div class="footer">
+        copyright Yong. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>
