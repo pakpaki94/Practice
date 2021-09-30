@@ -36,4 +36,8 @@ public class PracticeService {
 
         practiceRepository.deleteById(id);
     }
+//    // 조회수 증가
+//    public int practiceHit(Integer id) {
+//        return practiceRepository.practiceHit(id);
+//    }
 }

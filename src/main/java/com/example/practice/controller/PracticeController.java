@@ -44,8 +44,15 @@ public class PracticeController {
         return "practiceview";
     }
 
+    @GetMapping("/practice/update")
+    public String practiceUpdate(Model model, Integer id) {
+
+        model.addAttribute("practice", practiceService.practiceView(id));
+        return "practiceupdate";
+    }
+
     @GetMapping("/practice/delete")
-    public String practiceDelete(Integer id){
+    public String practiceDelete(Integer id) {
 
         practiceService.practiceDelete(id);
         return "redirect:/practice/list";

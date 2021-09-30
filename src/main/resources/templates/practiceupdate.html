@@ -36,13 +36,10 @@
             <input class="insertbox" name="title" type="text" th:value="${practice.title}" placeholder="제목을 입력해주세요">
             <textarea class="insertbox" name="content" th:value="${practice.content}" th:text="${practice.content}" placeholder="내용을 입력해주세요"></textarea>
             <input class="namebox" name="name" type="text" th:value="${practice.name}" placeholder="작성자명을 입력해주세요">
-            <input name="reg_date" type="hidden">
-            <input name="hit" type="hidden" value="0">
-            <p th:text="${#temporals.format(practice.reg_date, 'yyyy-MM-dd HH:mm')}"></p>
-            <a th:href="@{/practice/delete(id=${practice.id})}">글삭제</a>
+            <input name="reg_date" type="hidden" th:value="${#temporals.format(practice.reg_date, 'yyyy-MM-dd HH:mm')}">
             <div class="save">
-                <button class="button" type="submit">작성</button>
-                <button class="button"><a href="/practice/list">돌아가기</a></button>
+                <button class="button" type="submit">수정하기</button>
+                <button class="button"><a th:href="@{/practice/view(id=${practice.id})}">돌아가기</a></button>
             </div>
         </form>
     </div>
