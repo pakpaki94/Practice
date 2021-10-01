@@ -33,13 +33,14 @@ public class PracticeController {
     @PostMapping("/practice/writepro")
     public String practiceWritePro(Practice practice) {
 
-        practiceService.write(practice);
+        practiceService.practiceWrite(practice);
         return "redirect:/practice/list";
     }
 
     @GetMapping("/practice/view")
     public String practiceView(Model model, Integer id){
 
+        practiceService.practiceHit(id);
         model.addAttribute("practice", practiceService.practiceView(id));
         return "practiceview";
     }
