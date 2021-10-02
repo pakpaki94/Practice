@@ -52,6 +52,13 @@ public class PracticeController {
         return "practiceupdate";
     }
 
+    @GetMapping("/practice/updatepro")
+    public String practiceUpdatePro(Practice practice) {
+
+        practiceService.practiceUpdate(practice);
+        return "redirect:/practice/list";
+    }
+
     @GetMapping("/practice/delete")
     public String practiceDelete(Integer id) {
 

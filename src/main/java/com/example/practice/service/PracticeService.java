@@ -18,6 +18,13 @@ public class PracticeService {
 
         return practiceRepository.findAll(pageable);
     }
+    // 조회수 증가
+    public void practiceHit(Integer id) {
+
+        Practice practice = practiceRepository.findById(id).get();
+        practice.setHit(practice.getHit() + 1);
+        practiceRepository.save(practice);
+    }
     // 글 작성 처리
     public void practiceWrite(Practice practice) {
 
@@ -28,15 +35,15 @@ public class PracticeService {
 
         return practiceRepository.findById(id).get();
     }
+    // 글 수정 처리
+    public void practiceUpdate(Practice practice) {
+        practiceRepository.findById(practice.getId()).get();
+        practice.setReg_date(practice.getReg_date());
+        practiceRepository.save(practice);
+    }
     // 특정 게시글 삭제
     public void practiceDelete(Integer id) {
 
         practiceRepository.deleteById(id);
-    }
-    // 조회수 증가
-    public void practiceHit(Integer id) {
-        Practice practice = practiceRepository.findById(id).get();
-        practice.setHit(practice.getHit() + 1);
-        practiceRepository.save(practice);
     }
 }

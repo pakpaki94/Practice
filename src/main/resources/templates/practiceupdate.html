@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/css/write.css">
+    <link rel="stylesheet" type="text/css" href="/css/update.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>게시글 상세 페이지</title>
@@ -33,11 +33,15 @@
                 </select>
                 <input class="hashbox" type="text" placeholder="#해쉬태그입력(미구현)">
             </div>
+            <input type="hidden" name="id" th:value="${practice.id}">
+            <input type="hidden" name="hit" th:value="${practice.hit}">
             <input class="insertbox" name="title" type="text" th:value="${practice.title}" placeholder="제목을 입력해주세요">
             <textarea class="insertbox" name="content" th:value="${practice.content}" th:text="${practice.content}" placeholder="내용을 입력해주세요"></textarea>
             <input class="namebox" name="name" type="text" th:value="${practice.name}" placeholder="작성자명을 입력해주세요">
-            <input name="reg_date" type="hidden" th:value="${#temporals.format(practice.reg_date, 'yyyy-MM-dd HH:mm')}">
+            <input class="datebox" name="" type="text" th:value="${#temporals.format(practice.reg_date, 'yyyy-MM-dd HH:mm')}">
+            <input name="reg_date" type="hidden" th:value="${#temporals.format(practice.reg_date, 'yyyy-MM-dd HH:mm:ss')}">
             <div class="save">
+<!--                <button class="button" type="submit"><a th:href="@{/practice/updatepro(id=${practice.id})}">수정하기</a></button>-->
                 <button class="button" type="submit">수정하기</button>
                 <button class="button"><a th:href="@{/practice/view(id=${practice.id})}">돌아가기</a></button>
             </div>
