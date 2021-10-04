@@ -43,7 +43,7 @@ public class PracticeService {
         Practice past = practiceRepository.findById(practice.getId()).get();
 
         // 수정하기 위해 갖고 온 객체에 날짜 설정
-        
+        practice.setReg_date(past.getReg_date());
         // 수정한 글 저장 -> 기존에 있던 객체에 글 수정 이뤄진 걸 저장
         practiceRepository.save(practice);
     }
