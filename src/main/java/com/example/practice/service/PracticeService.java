@@ -35,10 +35,16 @@ public class PracticeService {
 
         return practiceRepository.findById(id).get();
     }
-    // 글 수정 처리
+    // 글 수정 처리             // 수정하기 위해 받은 객체
     public void practiceUpdate(Practice practice) {
-        practiceRepository.findById(practice.getId()).get();
-        practice.setReg_date(practice.getReg_date());
+        // 수정할 때 제목, 내용, 이름 수정 가능
+
+        // 기존에 있던 글
+        Practice past = practiceRepository.findById(practice.getId()).get();
+
+        // 수정하기 위해 갖고 온 객체에 날짜 설정
+        
+        // 수정한 글 저장 -> 기존에 있던 객체에 글 수정 이뤄진 걸 저장
         practiceRepository.save(practice);
     }
     // 특정 게시글 삭제

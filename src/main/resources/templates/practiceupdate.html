@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/update.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>게시글 상세 페이지</title>
+    <title>게시글 수정</title>
 </head>
 <body>
     <header>
@@ -23,8 +23,8 @@
         </div>
     </header>
     <div class="layout">
-        <h2>게시판 글쓰기</h2>
-        <form action="/practice/writepro" method="post">
+        <h2>게시판 글</h2>
+        <form action="/practice/updatepro" method="post">
             <div class="boxing">
                 <select class="selectbox" name="">
                     <option value="#">게시판을 선택해주세요.</option>
@@ -38,14 +38,12 @@
             <input class="insertbox" name="title" type="text" th:value="${practice.title}" placeholder="제목을 입력해주세요">
             <textarea class="insertbox" name="content" th:value="${practice.content}" th:text="${practice.content}" placeholder="내용을 입력해주세요"></textarea>
             <input class="namebox" name="name" type="text" th:value="${practice.name}" placeholder="작성자명을 입력해주세요">
-            <input class="datebox" name="" type="text" th:value="${#temporals.format(practice.reg_date, 'yyyy-MM-dd HH:mm')}">
-            <input name="reg_date" type="hidden" th:value="${#temporals.format(practice.reg_date, 'yyyy-MM-dd HH:mm:ss')}">
             <div class="save">
-<!--                <button class="button" type="submit"><a th:href="@{/practice/updatepro(id=${practice.id})}">수정하기</a></button>-->
                 <button class="button" type="submit">수정하기</button>
-                <button class="button"><a th:href="@{/practice/view(id=${practice.id})}">돌아가기</a></button>
+                <button class="button" type="button"><a th:href="@{/practice/view(id=${practice.id})}">돌아가기</a></button>
             </div>
         </form>
+
     </div>
     <footer>
         <div class="footer">

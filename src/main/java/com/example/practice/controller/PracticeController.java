@@ -9,6 +9,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -45,14 +46,13 @@ public class PracticeController {
         return "practiceview";
     }
 
-    @GetMapping("/practice/update")
-    public String practiceUpdate(Model model, Integer id) {
-
+    @GetMapping("/practice/update/{id}")
+    public String practiceUpdate(Model model, @PathVariable("id") Integer id) {
         model.addAttribute("practice", practiceService.practiceView(id));
         return "practiceupdate";
     }
 
-    @GetMapping("/practice/updatepro")
+    @PostMapping("/practice/updatepro")
     public String practiceUpdatePro(Practice practice) {
 
         practiceService.practiceUpdate(practice);

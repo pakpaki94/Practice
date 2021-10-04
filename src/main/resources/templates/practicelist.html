@@ -42,20 +42,21 @@
                 <div class="reg-date">작성일자</div>
                 <div class="hit">조회수</div>
             </li>
-                <li class="content" th:each="practice : ${list}">
-                    <div class="no" th:text="${practice.id}"></div>
-                    <div class="title title-set"><a th:href="@{/practice/view(id=${practice.id})}" th:text="${practice.title}"></a></div>
-                    <div class="writer" th:text="${practice.name}"></div>
-                    <div class="reg-date" th:text="${#temporals.format(practice.reg_date, 'yyyy.MM.dd HH:mm')}">-</div>
-                    <div class="hit" th:text="${practice.hit}"></div>
-                </li>
-<!--            <li class="content">-->
-<!--                <div class="no">1</div>-->
-<!--                <div class="title title-set"><a href="">스프링 알려주세요</a></div>-->
-<!--                <div class="writer">용휘</div>-->
-<!--                <div class="reg-date">2021-09-18</div>-->
-<!--                <div class="hit">100</div>-->
-<!--            </li>-->
+            <li class="content" th:each="practice : ${list}">
+                <div class="no" th:text="${practice.id}"></div>
+                <div class="title title-set"><a th:href="@{/practice/view(id=${practice.id})}"
+                                                th:text="${practice.title}"></a></div>
+                <div class="writer" th:text="${practice.name}"></div>
+                <div class="reg-date" th:text="${#temporals.format(practice.reg_date, 'yyyy.MM.dd HH:mm')}">-</div>
+                <div class="hit" th:text="${practice.hit}"></div>
+            </li>
+            <!--            <li class="content">-->
+            <!--                <div class="no">1</div>-->
+            <!--                <div class="title title-set"><a href="">스프링 알려주세요</a></div>-->
+            <!--                <div class="writer">용휘</div>-->
+            <!--                <div class="reg-date">2021-09-18</div>-->
+            <!--                <div class="hit">100</div>-->
+            <!--            </li>-->
         </ul>
         <div class="pagination">
             1 2 3 4 5
